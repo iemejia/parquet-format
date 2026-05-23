@@ -286,7 +286,7 @@ union BloomFilterAlgorithm {
  **/
 struct XxHash {}
 
-/** 
+/**
  * The hash function used in Bloom filter. This function takes the hash of a column value
  * using plain encoding.
  **/

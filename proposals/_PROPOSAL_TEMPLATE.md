@@ -34,10 +34,10 @@ Describe why this is a feature that will improve the parquet format and what alt
 
 ## Spec
 
-At the proposal stage you don't need a fully fleshed out spec yet. 
+At the proposal stage you don't need a fully fleshed out spec yet.
 Please add any link to relevant documentation, papers, etc.
 at the implementation stage, the details will need to be all clarified.
 
 ## Evaluation
-What datasets is it tested on and what is a success criteria 
-Please add any link to the relevant codebase. 
+What datasets is it tested on and what is a success criteria
+Please add any link to the relevant codebase.

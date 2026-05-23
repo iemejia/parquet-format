@@ -91,7 +91,7 @@ demonstrate that the feature is mergeable to its implementation.
 
 1. To the greatest extent possible changes should have an option for forward
    compatibility (old readers can still read files). The [compatibility and
-   feature enablement](#compatibility-and-feature-enablement) section below 
+   feature enablement](#compatibility-and-feature-enablement) section below
    provides more details on expectations for changes that break compatibility.
 
 2. New encodings should be fully specified in this repository and not

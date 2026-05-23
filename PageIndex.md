@@ -38,13 +38,13 @@ data from disk.
    access to pages based on their min and max values. In particular:
     *  A single-row lookup in a row group based on the sort column of that row group
   will only read one data page per retrieved column.
-    * Range scans on the sort column will only need to read the exact data 
+    * Range scans on the sort column will only need to read the exact data
       pages that contain relevant data.
     * Make other selective scans I/O efficient: if we have a very selective
       predicate on a non-sorting column, for the other retrieved columns we
       should only need to access data pages that contain matching rows.
 2. No additional decoding effort for scans without selective predicates, e.g.,
-   full-row group scans. If a reader determines that it does not need to read 
+   full-row group scans. If a reader determines that it does not need to read
    the index data, it does not incur any overhead.
 3. Index pages for sorted columns use minimal storage by storing only the
    boundary elements between pages.
@@ -66,8 +66,8 @@ We add two new per-column structures to the row group metadata:
   skipped. Hence the OffsetIndexes for each column in a RowGroup are stored
   together.
 
-The new index structures are stored separately from RowGroup, near the footer.  
-This is done so that a reader does not have to pay the I/O and deserialization 
+The new index structures are stored separately from RowGroup, near the footer.
+This is done so that a reader does not have to pay the I/O and deserialization
 cost for reading them if it is not doing selective scans. The index structures'
 location and length are stored in ColumnChunk.
 

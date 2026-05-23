@@ -21,9 +21,9 @@
 
 The extension mechanism of the `binary` Thrift field-id `32767` has some desirable properties:
 
-* Existing readers will ignore these extensions without any modifications  
-* Existing readers will ignore the extension bytes with little processing overhead  
-* The content of the extension is freeform and can be encoded in any format. This format is not restricted to Thrift.  
+* Existing readers will ignore these extensions without any modifications
+* Existing readers will ignore the extension bytes with little processing overhead
+* The content of the extension is freeform and can be encoded in any format. This format is not restricted to Thrift.
 * Extensions can be appended to existing Thrift serialized structs [without requiring Thrift libraries](#appending-extensions-to-thrift) for manipulation (or changes to the thrift IDL).
 
 Because only one field-id is reserved the extension bytes themselves require disambiguation; otherwise readers will not be able to decode extensions safely. This is left to implementers who MUST put enough unique state in their extension bytes for disambiguation. This can be relatively easily achieved by adding a [UUID](https://en.wikipedia.org/wiki/Universally\_unique\_identifier) at the start or end of the extension bytes. The extension does not specify a disambiguation mechanism to allow more flexibility to implementers.
@@ -71,8 +71,8 @@ At some point the experiments conclude and the extension is shared publicly with
 
 The community reviews the proposal and (potentially) proposes changes to the FlatBuffers IDL representation. In addition, because this extension is a *replacement* of an existing struct, it must:
 
-1. have some way of being extended in the future much like what it replaces. Because the extension mechanism only allows for a single extension, without this in place we cannot have footer extensions during the migration.  
-2. consider its intermediate form where both the **Thrift** `FileMetaData` and the **FlatBuffers** `FileMetaData` will be present.  
+1. have some way of being extended in the future much like what it replaces. Because the extension mechanism only allows for a single extension, without this in place we cannot have footer extensions during the migration.
+2. consider its intermediate form where both the **Thrift** `FileMetaData` and the **FlatBuffers** `FileMetaData` will be present.
 3. consider its final form where the long form header for `32767: binary` may not be present.
 
 Once the design is ratified the new `FileMetaData` encoding is made final with the following migration plan. For the next N years writers will write both the Thrift and the FlatBuffers `FileMetaData`. It will look much like its private form except the FlatBuffers IDL may be different:
@@ -98,9 +98,9 @@ After the migration period, the end of the Parquet file may look like this:
 
 In this example, we see several design decisions for the extension at play:
 
-* There is a new some-other-UUID for the accepted change to the standard and now the Thrift `FileMetaData` cannot be extended itself.  
-* The length of the footer and the crc32 of the length itself, guarantees that new readers will not overshoot reading bytes in case of corrupt bits in these critical 8 bytes of the file.  
-* The crc32 of the flatbuffer representation enhances Parquet to have crc32 for metadata as well which is arguably more important than crc32 for data.  
+* There is a new some-other-UUID for the accepted change to the standard and now the Thrift `FileMetaData` cannot be extended itself.
+* The length of the footer and the crc32 of the length itself, guarantees that new readers will not overshoot reading bytes in case of corrupt bits in these critical 8 bytes of the file.
+* The crc32 of the flatbuffer representation enhances Parquet to have crc32 for metadata as well which is arguably more important than crc32 for data.
 * The new encoding itself, which MUST contain some way to be extended in the future (much like Thrift does with this specification).
 
 ### Encoding

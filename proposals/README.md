@@ -45,8 +45,8 @@ Make sure you consider the [requirements document](https://docs.google.com/docum
 *Transition:* There is enough clarity on the spec for the new feature and we have identified the 2 initial reference implementations for verification.
 
 ### Implementation
-Once we have reached enough consensus on the formalized spec change and validated it through the POC, we should have a clear idea of whether we want to pursue the implementation across the ecosystem. 
-At this stage we should finalize a formal spec contribution to parquet-format and we need to meet the contribution guidelines to consider the implementation finished. 
+Once we have reached enough consensus on the formalized spec change and validated it through the POC, we should have a clear idea of whether we want to pursue the implementation across the ecosystem.
+At this stage we should finalize a formal spec contribution to parquet-format and we need to meet the contribution guidelines to consider the implementation finished.
 See [CONTRIBUTING guidelines](https://github.com/apache/parquet-format/blob/master/CONTRIBUTING.md#additionschanges-to-the-format).
 
 *Transition:* A PMC vote will formalize that we have concluded the implementation and are ready to release.
@@ -54,7 +54,7 @@ See [CONTRIBUTING guidelines](https://github.com/apache/parquet-format/blob/mast
 ### Approval
 Once the implementation phase is finished, we can include the contribution in the next release. Congrats!
 
-## Active Proposals 
+## Active Proposals
 
 | ID  | Description  | Status  |
 |-----|--------------|---------|
@@ -66,7 +66,7 @@ Once the implementation phase is finished, we can include the contribution in th
 ## Implemented
 | ID  | Description  | Status  | release it was added  |
 |-----|--------------|---------|-----------------------|
-| [github issue] | encryption | Completed |  x.y.z | 
+| [github issue] | encryption | Completed |  x.y.z |
 
 (Those are examples to be removed as we start using this)
 
@@ -74,6 +74,6 @@ Once the implementation phase is finished, we can include the contribution in th
 
 | ID  | Description  | Status  | reason for archiving  |
 |-----|--------------|---------|-----------------------|
-| [github issue] | [adding base64 compression](1_BASE64_ENCODING.md) | Archived | POC showed that compression ratio was not practical | 
+| [github issue] | [adding base64 compression](1_BASE64_ENCODING.md) | Archived | POC showed that compression ratio was not practical |
 
 (Those are examples to be removed as we start using this)

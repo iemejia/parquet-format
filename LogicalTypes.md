@@ -74,7 +74,7 @@ The sort order used for `STRING` strings is unsigned byte-wise comparison.
 `ENUM` annotates the `BYTE_ARRAY` primitive type and indicates that the value
 was converted from an enumerated type in another data model (e.g. Thrift, Avro, Protobuf).
 Applications using a data model lacking a native enum type should interpret `ENUM`
-annotated field as a UTF-8 encoded string. 
+annotated field as a UTF-8 encoded string.
 
 The sort order used for `ENUM` values is unsigned byte-wise comparison.
 
@@ -212,7 +212,7 @@ unsigned integers with 8, 16, 32, or 64 bit width.
 `DECIMAL` annotation represents arbitrary-precision signed decimal numbers of
 the form `unscaledValue * 10^(-scale)`.
 
-The primitive type stores an unscaled integer value. For `BYTE_ARRAY` and 
+The primitive type stores an unscaled integer value. For `BYTE_ARRAY` and
 `FIXED_LEN_BYTE_ARRAY`, the unscaled number must be encoded as two's complement using
 big-endian byte order (the most significant byte is the zeroth element). The
 scale stores the number of digits of that value that are to the right of the
@@ -618,7 +618,7 @@ The type has only one type parameter:
 
 The sort order used for `GEOMETRY` is undefined. When writing data, no min/max
 statistics should be saved for this type and if such non-compliant statistics
-are found during reading, they must be ignored. 
+are found during reading, they must be ignored.
 
 ### GEOGRAPHY
 
@@ -636,7 +636,7 @@ The type has two type parameters:
 
 The sort order used for `GEOGRAPHY` is undefined. When writing data, no min/max
 statistics should be saved for this type and if such non-compliant statistics
-are found during reading, they must be ignored. 
+are found during reading, they must be ignored.
 
 ## Nested Types
 
